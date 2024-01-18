@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
-import { createOrder } from "../../services/apiRestaurant";
+import { createOrder } from "../../services/resturantapi";
 import Button from "../../ui/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice";
@@ -102,26 +102,12 @@ function CreateOrder() {
           )}
         </div>
 
-        <div className="mb-12 flex items-center gap-5">
-          <input
-            className="h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
-            type="checkbox"
-            name="priority"
-            id="priority"
-            value={withPriority}
-            onChange={(e) => setWithPriority(e.target.checked)}
-          />
-          <label htmlFor="priority" className="font-medium">
-            Want to yo give your order priority?
-          </label>
-        </div>
-
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <Button disabled={isSubmitting || isLoadingAddress} type="primary">
             {isSubmitting
               ? "Placing order...."
-              : `Order now from ${formatCurrency(totalPrice)}`}
+              : `Place Order`}
           </Button>
         </div>
       </Form>
