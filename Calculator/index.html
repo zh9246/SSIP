@@ -1,0 +1,89 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="script.js"></script>
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    .main {
+      text-align: center;
+      border: solid 4px;
+      background: goldenrod;
+      padding: 20px;
+    }
+
+    button {
+      width: 80px;
+      height: 80px;
+      font-size: 25px;
+      border: solid;
+      background: ghostwhite;
+    }
+
+    .textinput {
+      width: 330px;
+      height: 50px;
+      font-size: 25px;
+      color:slategrey ;
+      border: solid;
+    }
+
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1>Simple Calculator</h1>
+    <form name="form">
+      <input name="textinput" class="textinput" />
+    </form>
+    <table>
+      <tr>
+        <td><button onclick="clean()">C</button></td>
+        <td><button onclick="back()">DEL</button></td>
+        <td><button onclick="insert('*')">*</button></td>
+        <td><button onclick="insert('/')">/</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="insert(1)">1</button></td>
+        <td><button onclick="insert(2)">2</button></td>
+        <td><button onclick="insert(3)">3</button></td>
+        <td><button onclick="insert('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="insert(4)">4</button></td>
+        <td><button onclick="insert(5)">5</button></td>
+        <td><button onclick="insert(6)">6</button></td>
+        <td><button onclick="insert('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="insert(7)">7</button></td>
+        <td><button onclick="insert(8)">8</button></td>
+        <td><button onclick="insert(9)">9</button></td>
+        <td rowspan=2><button style="height: 165px" onclick="calculate()">=</button></td>
+      </tr>
+      <tr>
+        <td colspan=2><button style="width:164px" onclick="insert(0)">0</button></td>
+        <td><button onclick="insert('.')">.</button></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
